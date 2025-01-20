@@ -189,6 +189,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
+    benchmark (0.4.0)
     better_errors (2.10.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
@@ -300,10 +301,11 @@ GEM
     faraday-typhoeus (1.1.0)
       faraday (~> 2.0)
       typhoeus (~> 1.4)
-    feedjira (3.2.3)
+    feedjira (3.2.4)
       loofah (>= 2.3.1, < 3)
       sax-machine (>= 1.0, < 2)
-    ffi (1.17.0)
+    ffi (1.17.1-x86_64-darwin)
+    ffi (1.17.1-x86_64-linux-gnu)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
@@ -531,9 +533,9 @@ GEM
     net-ssh (7.1.0)
     netrc (0.11.0)
     nio4r (2.7.4)
-    nokogiri (1.18.1-x86_64-darwin)
+    nokogiri (1.18.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.1-x86_64-linux-gnu)
+    nokogiri (1.18.2-x86_64-linux-gnu)
       racc (~> 1.4)
     notiffany (0.1.3)
       nenv (~> 0.1)
@@ -577,6 +579,7 @@ GEM
       rack
     orm_adapter (0.5.0)
     os (1.1.4)
+    ostruct (0.6.1)
     parallel (1.23.0)
     parser (3.2.2.1)
       ast (~> 2.4.1)
@@ -787,10 +790,12 @@ GEM
     trailblazer-option (0.1.2)
     treetop (1.6.12)
       polyglot (~> 0.3)
-    twilio-ruby (7.4.0)
+    twilio-ruby (7.4.2)
+      benchmark
       faraday (>= 0.9, < 3.0)
       jwt (>= 1.5, < 3.0)
       nokogiri (>= 1.6, < 2.0)
+      ostruct
     typhoeus (1.4.1)
       ethon (>= 0.9.0)
     tzinfo (2.0.6)
@@ -843,7 +848,7 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   bootstrap-kaminari-views (~> 0.0.5)
-  bundler (>= 2.6.2)
+  bundler (>= 2.6.3)
   capistrano
   capistrano-bundler
   capistrano-rails
@@ -865,8 +870,8 @@ DEPENDENCIES
   faraday-follow_redirects
   faraday-gzip
   faraday-typhoeus
-  feedjira (~> 3.2, >= 3.2.3)
-  ffi (>= 1.17.0)
+  feedjira (~> 3.2, >= 3.2.4)
+  ffi (>= 1.17.1)
   font-awesome-sass (~> 6.7.2)
   foreman (~> 0.88.1)!
   geokit (~> 1.14)
@@ -900,7 +905,7 @@ DEPENDENCIES
   mysql2 (~> 0.5, >= 0.5.6)
   net-ftp
   net-ftp-list
-  nokogiri (>= 1.18.1)
+  nokogiri (>= 1.18.2)
   omniauth
   omniauth-dropbox-oauth2!
   omniauth-evernote
@@ -940,7 +945,7 @@ DEPENDENCIES
   sprockets
   terser
   tumblr_client!
-  twilio-ruby (~> 7.4.0)
+  twilio-ruby (~> 7.4.2)
   twitter!
   twitter-stream!
   typhoeus
@@ -959,4 +964,4 @@ RUBY VERSION
    ruby 3.2.4p170
 
 BUNDLED WITH
-   2.6.2
+   2.6.3
