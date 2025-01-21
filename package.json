@@ -1,0 +1,14 @@
+{
+    "name": "maigatron-bot",
+    "version": "1.0.0",
+    "description": "MAIGATRON - A Solana meme coin Twitter bot that fights FUD with QUANTUM TRUTH",
+    "main": "config/launch_sequence.rb",
+    "scripts": {
+        "start": "ruby config/launch_sequence.rb",
+        "test": "ruby test/test_responses.rb"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "twitter": "^1.7.1"
+    }
+}

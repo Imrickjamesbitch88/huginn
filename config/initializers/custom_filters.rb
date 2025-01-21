@@ -1,0 +1,1 @@
+require_relative '../../lib/character_response_filter' 

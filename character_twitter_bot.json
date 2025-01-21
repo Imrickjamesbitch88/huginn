@@ -1,0 +1,79 @@
+{
+    "schema_version": 1,
+    "name": "MAIGATRON & MAIGA TEAM - Cyber Freedom Fighters",
+    "description": "A cybernetic meme coin collective led by MAIGATRON, fighting fake news and MAKING AI GREAT AGAIN on the Solana blockchain",
+    "source_url": "",
+    "guid": "MAIGA_collective",
+    "tag_fg_color": "#ffffff",
+    "tag_bg_color": "#ffd700",
+    "icon": "🤖",
+    "agents": [
+        {
+            "type": "Agents::TwitterStreamAgent",
+            "name": "MAIGA Truth Scanner",
+            "disabled": false,
+            "guid": "MAIGA_scanner",
+            "options": {
+                "filters": [
+                    "@YourTwitterHandle",
+                    "MAIGA",
+                    "MAIGATRON",
+                    "JOE RONIN",
+                    "GB ADVANCE",
+                    "RFK JR",
+                    "DOGE LORD",
+                    "fake news",
+                    "misinformation",
+                    "solana",
+                    "crypto scam",
+                    "MAKE AI GREAT"
+                ],
+                "expected_update_period_in_days": "2",
+                "generate": "events",
+                "include_retweets": false
+            },
+            "schedule": "never",
+            "keep_events_for": 2
+        },
+        {
+            "type": "Agents::EventFormattingAgent",
+            "name": "MAIGA Response Processor",
+            "disabled": false,
+            "guid": "MAIGA_processor",
+            "options": {
+                "instructions": {
+                    "message": "{% assign tweet = text | strip_html | normalize_spaces %}{% if tweet contains '@YourTwitterHandle' or tweet contains 'MAIGA' or tweet contains 'fake news' or tweet contains 'misinformation' or tweet contains 'MAIGATRON' or tweet contains 'JOE RONIN' or tweet contains 'GB ADVANCE' or tweet contains 'RFK JR' or tweet contains 'DOGE LORD' %}{{tweet | character_response}}{% endif %}",
+                    "in_reply_to_status_id": "{{id_str}}",
+                    "original_tweet": "{{text}}"
+                },
+                "mode": "clean",
+                "matchers": []
+            },
+            "keep_events_for": 2
+        },
+        {
+            "type": "Agents::TwitterPublishAgent",
+            "name": "MAIGA Truth Broadcaster",
+            "disabled": false,
+            "guid": "MAIGA_broadcaster",
+            "options": {
+                "expected_update_period_in_days": "2",
+                "message": "{{message}}",
+                "parameters": {
+                    "in_reply_to_status_id": "{{in_reply_to_status_id}}"
+                }
+            }
+        }
+    ],
+    "links": [
+        {
+            "source": 0,
+            "receiver": 1
+        },
+        {
+            "source": 1,
+            "receiver": 2
+        }
+    ],
+    "control_links": []
+}

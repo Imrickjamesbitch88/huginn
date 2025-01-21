@@ -51,7 +51,7 @@ gem 'google-cloud-translate-v2'
 
 # Twitter Agents
 gem 'omniauth-twitter'
-gem 'twitter', github: 'sferik/twitter' # Must to be loaded before cantino-twitter-stream.
+gem 'twitter', '~> 8.0'
 gem 'twitter-stream', github: 'cantino/twitter-stream', branch: 'huginn'
 
 # Tumblr Agents
