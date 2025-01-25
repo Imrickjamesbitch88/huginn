@@ -25,7 +25,7 @@ Huginn is a system for building agents that perform automated tasks for you onli
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/huginn/huginn?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Changelog #199](https://img.shields.io/badge/changelog-%23199-lightgrey.svg)](https://changelog.com/podcast/199)
 
-Join us in our [Gitter room](https://gitter.im/huginn/huginn) to discuss the project.
+Join us in our [Gitter room](https://gitter.im/huginn/huginn) to discuss the project.bundle exec rake db:create
 
 ### Join us!
 
@@ -65,7 +65,7 @@ If you just want to play around, you can simply fork this repository, then perfo
 * Copy `.env.example` to `.env` (`cp .env.example .env`) and edit `.env`, at least updating the `APP_SECRET_TOKEN` variable.
 * Make sure that you have MySQL or PostgreSQL installed. (On a Mac, the easiest way is with [Homebrew](http://brew.sh/). If you're going to use PostgreSQL, you'll need to prepend all commands below with `DATABASE_ADAPTER=postgresql`.)
 * Run `bundle` to install dependencies
-* Run `bundle exec rake db:create`, `bundle exec rake db:migrate`, and then `bundle exec rake db:seed` to create a development database with some example Agents.
+* Run ``, `bundle exec rake db:migrate`, and then `bundle exec rake db:seed` to create a development database with some example Agents.
 * Run `bundle exec foreman start`, visit [http://localhost:3000/][localhost], and login with the username of `admin` and the password of `password`.
 * Setup some Agents!
 * Read the [wiki][wiki] for usage examples and to get started making new Agents.
