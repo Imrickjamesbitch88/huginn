@@ -51,7 +51,7 @@ gem 'google-cloud-translate-v2'
 
 # Twitter Agents
 gem 'omniauth-twitter'
-gem 'twitter', '~> 8.0'
+gem 'twitter', git: 'https://github.com/sferik/twitter.git'
 gem 'twitter-stream', github: 'cantino/twitter-stream', branch: 'huginn'
 
 # Tumblr Agents
