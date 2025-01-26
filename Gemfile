@@ -7,6 +7,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Add Puma for production server
+gem 'puma', '~> 6.4'
+
 # Load vendored dotenv gem and .env file
 require File.join(File.dirname(__FILE__), 'lib/gemfile_helper.rb')
 GemfileHelper.load_dotenv do |dotenv_dir|
