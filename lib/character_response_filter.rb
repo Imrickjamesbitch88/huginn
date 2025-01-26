@@ -1266,7 +1266,13 @@ module CharacterResponseFilter
   end
 end
 
-Liquid::Template.register_filter(CharacterResponseFilter)
+# Update the filter registration to use Environment instead of Template
+if defined?(Liquid::Template)
+  Liquid::Environment.new.register_filter(CharacterResponseFilter)
+else
+  require 'liquid'
+  Liquid::Environment.new.register_filter(CharacterResponseFilter)
+end
 
 # Run tests if this file is being run directly
 if __FILE__ == $0
