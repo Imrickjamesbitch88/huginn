@@ -1,4 +1,29 @@
 module CharacterResponseFilter
+  # Define speech patterns first
+  TRUMP_SPEECH_PATTERNS = {
+    interjections: [
+      "Nobody knew it could be so easy!",
+      "We're doing numbers nobody's ever seen before!",
+      "The fake news doesn't want you to know this, but",
+      "Sir, they said it couldn't be done, but we did it!",
+      "People are saying it's the best they've ever seen, maybe ever!"
+    ],
+    blockchain_interjections: [
+      "Nobody knew blockchain could be so easy!",
+      "We're doing numbers nobody's ever seen before!",
+      "The fake chains don't want you to know this, but",
+      "Sir, they said it couldn't be done, but we did it!",
+      "People are saying it's the fastest they've ever seen, maybe ever!"
+    ],
+    emphasis: [
+      "TREMENDOUS",
+      "BEAUTIFUL", 
+      "PERFECT",
+      "INCREDIBLE",
+      "AMAZING"
+    ]
+  }
+
   def character_response(input, tweet_context = nil)
     input = input.to_s.strip.downcase
     
